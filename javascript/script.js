@@ -15,6 +15,11 @@ let inputs;
 let word;
 let gameOver;
 let tries = 0;
+const functions = {
+  addOne: () => 1 + 1,
+};
+
+const addOne = () => 1 + 1;
 
 const wordpicker = (list) => {
   const index = Math.floor(Math.random() * list.length);
@@ -38,17 +43,9 @@ const winTheGame = () => {
 };
 
 const lose4 = () => {
-  // when losing 3 times, this has to happen
+  // when losing 5 times, this has to happen
   document.querySelector(".lose").style.display = "block";
   gameOver = true;
-};
-
-const spanTheWord1 = (word) => {
-  document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
-};
-
-const updateTriesDisplay = (tries) => {
-  document.querySelector(".lives span").innerHTML = 5 - tries;
 };
 
 const letters = (word, inputs) => {
@@ -132,3 +129,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // allTheWords = []
 // This code here selects a random word
+
+module.exports = functions;
