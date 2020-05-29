@@ -17,14 +17,22 @@ let gameOver;
 let tries = 0;
 const functions = {
   addOne: () => 1 + 1,
-};
 
-const addOne = () => 1 + 1;
-
-const wordpicker = (list) => {
-  const index = Math.floor(Math.random() * list.length);
-  return list[index];
+  wordpicker: (list) => {
+    const index = Math.floor(Math.random() * list.length);
+    return list[index];
+  },
+  checkLoser: () => {
+    // when losing 5 times, this has to happen
+    document.querySelector(".lose").style.display = "block";
+    gameOver = true;
+  },
+  winTheGame: () => {
+    document.querySelector(".win").style.display = "block";
+    gameOver = true;
+  },
 };
+const f = functions;
 
 const wordGuessed = (word, inputs) => {
   // remove all letters from word that are already guessed
@@ -35,17 +43,6 @@ const wordGuessed = (word, inputs) => {
   });
   // If we have letters left, right?
   return remaining.length === 0;
-};
-
-const winTheGame = () => {
-  document.querySelector(".win").style.display = "block";
-  gameOver = true;
-};
-
-const lose4 = () => {
-  // when losing 5 times, this has to happen
-  document.querySelector(".lose").style.display = "block";
-  gameOver = true;
 };
 
 const letters = (word, inputs) => {
@@ -88,9 +85,9 @@ const guessLetter = () => {
   letters(word, inputs);
 
   if (wordGuessed(word, inputs)) {
-    winTheGame();
+    f.winTheGame();
   } else if (tries >= 5) {
-    lose4();
+    f.checkLoser();
   }
 };
 
@@ -107,7 +104,7 @@ const beginTheGameWithPlayer = (player1) => {
   document.querySelector(".lose").style.display = "none";
   document.querySelector("input").value = "";
 
-  word = wordpicker(wordList).split("");
+  word = f.wordpicker(wordList).split("");
   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
   word;
 
