@@ -1,8 +1,11 @@
+# Verdeling van opdrachten 
+
 ## Bennie
 
 * CSS Styling
-
+* jest test functions
 
 ## Ramsey
 
-* Refactor JS
+* Refactor given JS
+* jest test functions
