@@ -1,7 +1,6 @@
 {
   "name": "javascript",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
     "test": "jest --watchAll"
@@ -11,5 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^26.0.1"
-  }
+  },
+  "description": ""
 }
