@@ -1,15 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+
 :root {
   --bgColor: linear-gradient(to bottom, #1976d2, #448aff);
 }
 
-.wrapper {
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: white;
+  margin: 0;
   background: var(--bgColor);
+}
+
+.main-wrapper {
   width: 100vw;
   height: 90vh;
-  margin: 0 auto;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: none;
+}
+
+.title-wrapper {
+  text-align: center;
+  position: relative;
+  color: white;
+  left: 50%;
+  width: 40vw;
+  margin: 0 0 0 -20vw;
+  overflow: hidden;
+}
+
+.game-title {
+  font-family: 'Caesar Dressing', cursive;
+  margin: 0;
+
 }
 
 .win,
@@ -23,4 +51,173 @@
 
 .lose h2 {
   color: blue;
+}
+
+footer {
+  z-index: 1;
+  position: absolute;
+  display: grid;
+  bottom: 0;
+  padding: 5px 0 5px 0;
+  background: #34a853;
+  height: 10vh;
+  width: 100vw;
+  margin: 0;
+}
+
+footer>div {
+  text-align: center;
+  place-self: center;
+  place-content: center;
+  margin: 0;
+}
+
+.about {
+  margin: 0;
+}
+
+.title-wrapper {
+  text-align: center;
+  position: relative;
+  color: white;
+  left: 50%;
+  width: 90vw;
+  margin: 0 0 0 -45vw;
+  overflow: hidden;
+  padding-top: 25px;
+}
+
+.game-wrapper {
+  text-align: center;
+  position: relative;
+  color: white;
+  top: 30%;
+  left: 50%;
+  height: 40vh;
+  width: 90vw;
+  margin: -20vh 0 0 -45vw;
+}
+
+.game-title {
+  font-size: 30px;
+}
+
+.game-subtitle {
+  font-size: 16px;
+  visibility: hidden;
+}
+
+@media (orientation: portrait) {
+  .portrait-block {
+    display: grid;
+    position: fixed;
+    background: var(--bgColor);
+    z-index: 5000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    visibility: visible;
+    margin: 0;
+    padding: 0;
+  }
+
+  .portrait-block>div {
+    text-align: center;
+    place-self: center;
+    place-content: center;
+  }
+
+  .turn-device {
+    font-family: 'Caesar Dressing',
+      cursive;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (orientation: landscape) {
+  .portrait-block {
+    visibility: hidden;
+    z-index: -1000;
+    margin: 0;
+    height: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .game-wrapper {
+    text-align: center;
+    position: relative;
+    color: white;
+    top: 10%;
+    left: 50%;
+    height: 40vh;
+    width: 40vw;
+    margin: -20vh 0 0 -20vw;
+  }
+
+  .game-title {
+    font-size: 30px;
+  }
+
+  .about {
+    font-size: 12px;
+
+  }
+
+
+}
+
+@media (min-width: 768px) {
+  .game-wrapper {
+    text-align: center;
+    position: relative;
+    color: white;
+    top: 40%;
+    left: 50%;
+    height: 40vh;
+    width: 40vw;
+    margin: -20vw 0 0 -20vw;
+  }
+
+  .game-title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .game-wrapper {
+    text-align: center;
+    position: relative;
+    color: white;
+    top: 25%;
+    left: 50%;
+    height: 50vh;
+    width: 50vw;
+    margin: -25vh 0 0 -25vw;
+  }
+
+  .game-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .game-wrapper {
+    text-align: center;
+    position: relative;
+    color: white;
+    top: 35%;
+    left: 50%;
+    height: 60vh;
+    width: 60vw;
+    margin: -30vh 0 0 -30vw;
+  }
+
+  .game-title {
+    font-size: 60px;
+  }
 }
