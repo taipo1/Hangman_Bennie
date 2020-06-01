@@ -2,36 +2,36 @@
 
 const wordList = [
   "vis",
-  "toeter",
-  "developer",
-  "telefoon",
-  "moeder",
-  "snoer",
-  "geeuw",
+  // "toeter",
+  // "developer",
+  // "telefoon",
+  // "moeder",
+  // "snoer",
+  // "geeuw",
 ];
 
-let maxAmount = 5;
 let inputs;
 let word;
 let gameOver;
 let tries = 0;
-const functions = {
-  addOne: () => 1 + 1,
 
-  wordpicker: (list) => {
+const functions = {
+  assignWinningWord: (list) => {
     const index = Math.floor(Math.random() * list.length);
-    return list[index];
+    word = list[index].split("");
+    return list[index].split("");
   },
-  checkLoser: () => {
+  ShowLoseScreen: () => {
     // when losing 5 times, this has to happen
     document.querySelector(".lose").style.display = "block";
     gameOver = true;
   },
-  winTheGame: () => {
+  showWinningScreen: () => {
     document.querySelector(".win").style.display = "block";
     gameOver = true;
   },
 };
+
 const f = functions;
 
 const wordGuessed = (word, inputs) => {
@@ -68,26 +68,26 @@ const guessLetter = () => {
   if (gameOver) {
     return;
   }
-  const input1 = document.querySelector("input").value;
+  const inputValue = document.querySelector("input").value;
   document.querySelector("input").value = "";
 
-  if (inputs.includes(input1) || input1 === "") {
+  if (inputs.includes(inputValue) || inputValue === "") {
     return;
   }
 
-  if (!word.includes(input1)) {
+  if (!word.includes(inputValue)) {
     tries++;
     document.querySelector(".lives span").innerHTML = 5 - tries;
   }
 
-  inputs.push(input1);
+  inputs.push(inputValue);
   theWord(word, inputs);
   letters(word, inputs);
 
   if (wordGuessed(word, inputs)) {
-    f.winTheGame();
+    f.showWinningScreen();
   } else if (tries >= 5) {
-    f.checkLoser();
+    f.ShowLoseScreen();
   }
 };
 
@@ -98,19 +98,15 @@ const getThePlayer = () => {
 };
 
 const beginTheGameWithPlayer = (player1) => {
-  getThePlayer(player1);
+  // getThePlayer(player1);
   gameOver = false;
-  document.querySelector(".win").style.display = "none";
-  document.querySelector(".lose").style.display = "none";
   document.querySelector("input").value = "";
-
-  word = f.wordpicker(wordList).split("");
+  f.assignWinningWord(wordList);
   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
   word;
 
   tries = 0;
   document.querySelector(".lives span").innerHTML = 5 - 0;
-
   inputs = [];
   theWord(word, inputs);
   letters(word, inputs);
@@ -123,8 +119,5 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", beginTheGameWithPlayer);
   beginTheGameWithPlayer();
 });
-
-// allTheWords = []
-// This code here selects a random word
 
 module.exports = functions;

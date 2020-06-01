@@ -1,8 +1,9 @@
 ## Bennie
 
-* CSS Styling
-
+- CSS Styling
+- Jest
 
 ## Ramsey
 
-* Refactor JS
+- Refactor JS
+- jest

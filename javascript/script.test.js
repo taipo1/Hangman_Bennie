@@ -1,21 +1,18 @@
 const functions = require("./script.js");
-
-// test jest
-test("should equal 2", () => {
-  expect(functions.addOne()).toEqual(2);
-});
-
-// check if wordpicker returns string
-test("Should return string from array", () => {
-  expect(functions.wordpicker(["one", "two", "four"])).toMatch("o");
-});
-
 //Unit testing voor galgje.
 
-// check if word picker returns a string not an array
+// 1. starten van de game d.m.v. het kiezen van het woord
+test("should return the chosen word array", () => {
+  const testArray = ["test"];
+  expect(functions.assignWinningWord(testArray)).toEqual(["t", "e", "s", "t"]);
+});
+// 2. checken of een letter voorkomt in het woord
 
-// if lives = 0 / tries = 5  return gameOver
+// 3. updaten van het aantal pogingen van de gebruiker
 
-// Check if win condition becomes true
+// 4. updaten van de lijst met letters die al geraden
+//    zijn door de gebruiker
 
-//
+// 5. verliezen van de game wanneer er geen pogingen meer over zijn
+
+// 6. winnen van de game
