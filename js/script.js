@@ -18,14 +18,17 @@ const functions = {
     word = list[index].split("");
     return list[index].split("");
   },
+
   showLoseScreen: () => {
     document.querySelector(".lose").style.display = "block";
     gameOver = true;
   },
+
   showWinningScreen: () => {
     document.querySelector(".win").style.display = "block";
     gameOver = true;
   },
+
   // validates the input to be true or false
   checkInputValue: (word, inputs) => {
     let isTrue = false;
@@ -34,17 +37,20 @@ const functions = {
     }
     return isTrue;
   },
+
   // fetches input value
   fetchValue: () => {
     givenValue = document.querySelector("input").value;
     document.querySelector("input").value = "";
     return givenValue;
   },
+
   // updates the dom with wrong inputs
   updateDomWrongInput: () => {
     document.querySelector(".lives span").innerHTML = 5 - tries;
     animatedFunctions.animateHangMan(tries);
   },
+
   // calls the right functions for false or true statements
   inputValidator: (input, word) => {
     const validatedValue = f.checkInputValue(word, input);
@@ -115,7 +121,6 @@ const filterGuessedLetters = (word, inputs) => {
 };
 
 // Input handeler Master function
-
 const guessLetter = () => {
   if (gameOver) {
     return;
@@ -139,6 +144,9 @@ const guessLetter = () => {
 // Game functionality
 
 const startGame = () => {
+  //////////////////////////////////////
+  animatedFunctions.resetHangMan(tries);
+  //////////////////////////////////////
   gameOver = false;
   inputs = [];
   tries = 0;
