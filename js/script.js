@@ -20,11 +20,13 @@ const functions = {
   },
 
   showLoseScreen: () => {
+    animateFunctions.hideInputAndButtons()
     document.querySelector(".lose").style.display = "block";
     gameOver = true;
   },
 
   showWinningScreen: () => {
+    animateFunctions.hideInputAndButtons()
     document.querySelector(".win").style.display = "block";
     gameOver = true;
   },
@@ -48,7 +50,7 @@ const functions = {
   // updates the dom with wrong inputs
   updateDomWrongInput: () => {
     document.querySelector(".lives span").innerHTML = 5 - tries;
-    animatedFunctions.animateHangMan(tries);
+    animateFunctions.animateHangMan(tries);
   },
 
   // calls the right functions for false or true statements
@@ -145,7 +147,8 @@ const guessLetter = () => {
 
 const startGame = () => {
   //////////////////////////////////////
-  animatedFunctions.resetHangMan(tries);
+  animateFunctions.resetHangMan();
+  animateFunctions.showInputAndButtons();
   //////////////////////////////////////
   gameOver = false;
   inputs = [];
