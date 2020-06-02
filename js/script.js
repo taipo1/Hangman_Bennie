@@ -78,13 +78,11 @@ const guessLetter = () => {
   if (!word.includes(input1)) {
     tries++;
     document.querySelector(".lives span").innerHTML = 5 - tries;
-   
+
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
     /////  Aanroepen animatie functie Bennie /////
-
-    animateHangMan(tries)
-
+    animateFunctions.animateHangMan(tries)
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
     ///////////////////////////////////////////////
@@ -108,6 +106,15 @@ const getThePlayer = () => {
 };
 
 const beginTheGameWithPlayer = (player1) => {
+
+  ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+  /////  Aanroepen animatie functie Bennie /////
+  animateFunctions.clearHangman()
+  ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+  ///////////////////////////////////////////////
+
   getThePlayer(player1);
   gameOver = false;
   document.querySelector(".win").style.display = "none";
@@ -128,9 +135,7 @@ const beginTheGameWithPlayer = (player1) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".guess").addEventListener("click", guessLetter);
-  document
-    .querySelector(".restart")
-    .addEventListener("click", beginTheGameWithPlayer);
+  document.querySelector(".restart").addEventListener("click", beginTheGameWithPlayer);
   beginTheGameWithPlayer();
 });
 
