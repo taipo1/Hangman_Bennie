@@ -75,52 +75,51 @@
 }
 
 
-@media (min-width: 480px) {
-    .bushes-1 {
-        background-color: var(--bush-1);
-        height: 25vw;
-        width: 35vw;
-        left: -10%;
-        bottom: -20%;
-        z-index: 5;
-    }
-
-    .bushes-1::before {
-        content: "";
-        display: block;
-        background-color: var(--bush-1);
-        height: 25vw;
-        width: 35vw;
-        left: 60%;
-        bottom: -15%;
-        z-index: 5;
-    }
-
-    .bushes-2 {
-        background-color: var(--bush-2);
-        height: 25vw;
-        width: 28vw;
-        left: -10%;
-        bottom: -10%;
-        z-index: 4;
-    }
-
-    .bushes-2::before {
-        content: "";
-        display: block;
-        background-color: var(--bush-2);
-        height: 27vw;
-        width: 27vw;
-        left: 55%;
-        bottom: -20%;
-        z-index: 4;
-    }
-
-    .cloud-1-4 {
-        width: 7vh;
-        height: 5vh;
-    }
+.bushes-1 {
+    background-color: var(--bush-1);
+    height: 25vw;
+    width: 35vw;
+    left: -10%;
+    bottom: -20%;
+    z-index: 5;
 }
+
+.bushes-1::before {
+    content: "";
+    display: block;
+    background-color: var(--bush-1);
+    height: 25vw;
+    width: 35vw;
+    left: 60%;
+    bottom: -15%;
+    z-index: 5;
+}
+
+.bushes-2 {
+    background-color: var(--bush-2);
+    height: 25vw;
+    width: 28vw;
+    left: -10%;
+    bottom: -10%;
+    z-index: 4;
+}
+
+.bushes-2::before {
+    content: "";
+    display: block;
+    background-color: var(--bush-2);
+    height: 27vw;
+    width: 27vw;
+    left: 55%;
+    bottom: -20%;
+    z-index: 4;
+}
+
+.cloud-1-4 {
+    width: 7vh;
+    height: 5vh;
+}
+
 
 @media (min-width: 768px) {
     .bushes-1 {
@@ -148,7 +147,7 @@
     }
 }
 
-@media (min-width: 992px) {
+ @media (min-width: 992px) {
     .bushes-1 {
         left: -10%;
         bottom: -25%;
@@ -192,55 +191,3 @@
         top: 0%;
     }
 }
-
-/* @media (min-width: 1400px) {
-    .cloud-2 {
-        top: -1%;
-    }
-
-    .cloud-3 {
-        top: 15%;
-    }
-}
-
-@media (min-width: 1600px) {
-    .bushes-1 {
-        bottom: -40%;
-    }
-
-    .bushes-1::before {
-        left: 50%;
-    }
-
-    .bushes-2 {
-        bottom: -30%;
-    }
-
-    .cloud-1-4 {
-        width: 14vh;
-        height: 10vh;
-    }
-
-    .cloud-2 {
-        left: 25%;
-    }
-}
-
-@media (min-width: 1800px) {
-    .bushes-1 {
-        bottom: -38%;
-    }
-
-    .bushes-1::before {
-        left: 40%;
-    }
-
-    .bushes-2 {
-        bottom: -31%;
-    }
-
-    .cloud-1-4 {
-        width: 14vh;
-        height: 10vh;
-    }
-} */
