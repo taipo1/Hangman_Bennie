@@ -39,6 +39,12 @@ test("Make GameOver TRUE when lives reaches 5", () => {
   expect(functions.checkLoseCondition(tries)).toEqual(true);
 });
 
+test("Make GameOver TRUE when lives reaches 5 fails", () => {
+  let tries = 4;
+  let gameOver = false;
+  expect(functions.checkLoseCondition(tries)).toEqual(false);
+});
+
 // 6. winnen van de game
 test("Check if our win condition triggers at the right moment", () => {
   const word = ["t", "e", "t", "s"];
