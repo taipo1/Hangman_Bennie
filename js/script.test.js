@@ -1,3 +1,6 @@
+// MAKE SURE YOU COMMENT OUT THE DOM MANIPULATION FOR THE FUNCTIONS
+// Comment out lines 166 167 178 and 187
+
 const functions = require("./script.js");
 //Unit testing for hangman .
 

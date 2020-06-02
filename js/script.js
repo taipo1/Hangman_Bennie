@@ -1,12 +1,106 @@
 const wordList = [
-  "vis",
-  // "toeter",
-  // "developer",
-  // "telefoon",
-  // "moeder",
-  // "snoer",
-  // "geeuw",
+  "cavia",
+  "krukje",
+  "tijd",
+  "fors",
+  "sambal",
+  "zuivel",
+  "kritisch",
+  "jasje",
+  "giga",
+  "dieren",
+  "lepel",
+  "picknick",
+  "quasi",
+  "verzenden",
+  "winnaar",
+  "dextrose",
+  "vrezen",
+  "niqaab",
+  "hierbij",
+  "quote",
+  "botox",
+  "cruciaal",
+  "zitting",
+  "cabaret",
+  "bewogen",
+  "vrijuit",
+  "carrière",
+  "ijverig",
+  "cake",
+  "dyslexie",
+  "uier",
+  "nihil",
+  "sausje",
+  "kuuroord",
+  "poppetje",
+  "docent",
+  "camping",
+  "schijn",
+  "kloppen",
+  "detox",
+  "boycot",
+  "cyclus",
+  "quiz",
+  "censuur",
+  "aaibaar",
+  "chagrijnig",
+  "fictief",
+  "chef",
+  "gering",
+  "nacht",
+  "cacao",
+  "triomf",
+  "baby",
+  "ijstijd",
+  "cruisen",
+  "ontzeggen",
+  "quad",
+  "open",
+  "turquoise",
+  "carnaval",
+  "boxer",
+  "straks",
+  "fysiek",
+  "accu",
+  "twijg",
+  "quote",
+  "gammel",
+  "flirt",
+  "futloos",
+  "vreugde",
+  "ogen",
+  "geloof",
+  "periode",
+  "volwaardig",
+  "uitleg",
+  "stuk",
+  "volk",
+  "even",
+  "stijl",
+  "val",
+  "alliantie",
+  "tocht",
+  "mooi",
+  "joggen",
+  "broek",
+  "kwik",
+  "werksfeer",
+  "vorm",
+  "nieuw",
+  "sopraan",
+  "miljoen",
+  "inrichting",
+  "klacht",
+  "dak",
+  "echt",
+  "schikking",
+  "print",
+  "oorlog",
+  "zijraam",
+  "hyacint",
 ];
+
 let inputs;
 let word;
 let gameOver;
@@ -20,13 +114,13 @@ const functions = {
   },
 
   showLoseScreen: () => {
-    animateFunctions.hideInputAndButtons()
+    animateFunctions.hideInputAndButtons();
     document.querySelector(".lose").style.display = "block";
     gameOver = true;
   },
 
   showWinningScreen: () => {
-    animateFunctions.hideInputAndButtons()
+    animateFunctions.hideInputAndButtons();
     document.querySelector(".win").style.display = "block";
     gameOver = true;
   },
@@ -146,10 +240,6 @@ const guessLetter = () => {
 // Game functionality
 
 const startGame = () => {
-  //////////////////////////////////////
-  animateFunctions.resetHangMan();
-  animateFunctions.showInputAndButtons();
-  //////////////////////////////////////
   gameOver = false;
   inputs = [];
   tries = 0;
@@ -161,6 +251,8 @@ const startGame = () => {
   f.hideGameScreen();
   UpdateDomWinningWord(word, inputs);
   filterGuessedLetters(word, inputs);
+  animateFunctions.resetHangman();
+  animateFunctions.showInputAndButtons();
 };
 
 document.addEventListener("DOMContentLoaded", () => {
