@@ -1,18 +1,15 @@
-:root {
-    --bgColor: linear-gradient(to bottom, #1976d2, #448aff);
-}
-
 #hangman {
+    z-index: 100;
     position: absolute;
     left: 1vw;
     bottom: 0;
     width: 60vh;
     height: 60vh;
-    border: none;
-    z-index: 100;
+    border: none;  
 }
 
 #hang-bottom {
+    z-index: 100;
     position: absolute;
     width: 25%;
     height: 5%;
@@ -24,6 +21,7 @@
 }
 
 #hang-pole {
+    z-index: 100;
     position: absolute;
     width: 5%;
     height: 90%;
@@ -34,6 +32,7 @@
 }
 
 #hang-arm {
+    z-index: 100;
     position: absolute;
     left: 5%;
     width: 30%;
@@ -45,15 +44,18 @@
 }
 
 #rope {
+    z-index: 100;
     position: absolute;
     width: 2%;
     height: 24%;
     background: linear-gradient(135deg, yellow, gold, yellow, gold, yellow, gold, yellow, gold, yellow, gold, yellow, gold);
     left: 27%;
     top: 10%;
+    visibility: hidden;
 }
 
 #rope-2 {
+    z-index: 100;
     position: absolute;
     width: 2%;
     height: 10%;
@@ -63,9 +65,11 @@
     transform: rotate(-50deg);
     border-radius: 25%;
     z-index: 20;
+    visibility: hidden;
 }
 
 #head {
+    z-index: 50;
     position: absolute;
     width: 13%;
     height: 15%;
@@ -79,6 +83,7 @@
 }
 
 #body {
+    z-index: 100;
     position: absolute;
     width: 7%;
     height: 25%;
@@ -92,6 +97,7 @@
 }
 
 #arm {
+    z-index: 100;
     position: absolute;
     width: 4%;
     height: 12.5%;
@@ -105,6 +111,7 @@
 }
 
 #arm-2 {
+    z-index: 100;
     position: absolute;
     width: 3%;
     height: 12%;
@@ -118,6 +125,7 @@
 }
 
 #leg {
+    z-index: 100;
     position: absolute;
     width: 5%;
     height: 12.5%;
@@ -131,6 +139,7 @@
 }
 
 #leg-2 {
+    z-index: 100;
     position: absolute;
     width: 3%;
     height: 15%;
@@ -144,6 +153,7 @@
 }
 
 #foot {
+    z-index: 100;
     position: absolute;
     width: 2%;
     height: 6%;

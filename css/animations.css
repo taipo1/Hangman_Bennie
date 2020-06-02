@@ -12,6 +12,7 @@
 
 /* CREATE  CLOUDS */
 .cloud {
+    z-index: 75;
     top: 80%;
     left: 5%;
 }
@@ -41,6 +42,7 @@
 }
 
 .cloud-1-4 {
+    z-index: 75;
     position: absolute;
     overflow: hidden;
     width: 7vh;
@@ -49,21 +51,25 @@
 
 /* SET ALL CLOUDS IN POSITION (CLOUD WRAPPER)*/
 .cloud-1 {
+    z-index: 75;
     left: 15%;
     top: 15%;
 }
 
 .cloud-2 {
+    z-index: 75;
     left: 30%;
     top: 4%;
 }
 
 .cloud-3 {
-    left: 60%;
+    z-index: 75;
+    left: 65%;
     top: 18%;
 }
 
 .cloud-4 {
+    z-index: 75;
     left: 80%;
     top: 5%;
 }
@@ -187,7 +193,7 @@
     }
 }
 
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
     .cloud-2 {
         top: -1%;
     }
@@ -237,4 +243,4 @@
         width: 14vh;
         height: 10vh;
     }
-}
+} */

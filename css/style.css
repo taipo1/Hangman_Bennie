@@ -86,6 +86,7 @@ body {
     text-align: center;
     font-family: fantasy;
     font-size: 16px;
+
   }
 
   #input-wrapper {
@@ -127,7 +128,6 @@ body {
     left: 30%;
     right: 30%;
     width: 40%;
-    border: solid black;
   }
 
   .guess {
@@ -147,6 +147,16 @@ body {
     cursor: pointer;
     outline: none;
     margin-left: 22.5%;
+  }
+
+  .guess:hover {
+    background: gold;
+    color: white;
+  }
+
+  .restart:hover {
+    background: gold;
+    color: white;
   }
 
   .restart {
@@ -173,7 +183,6 @@ body {
     bottom: 5%;
     height: 40%;
     width: 100%;
-    border: solid black;
   }
 
   footer {
@@ -190,6 +199,7 @@ body {
   }
 
   footer>div {
+    z-index: 1;
     text-align: center;
     place-self: center;
     place-content: center;
@@ -198,21 +208,121 @@ body {
   }
 
   .about {
+    z-index: 1;
     font-size: 15px;
     margin: 0;
   }
 
   .win,
   .lose {
+    z-index: 125;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 30%;
+    font-size: 40px;
     display: none;
   }
 
+  .win,
+  .lose {
+    -webkit-animation-name: wobble;
+    animation-name: wobble;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  @-webkit-keyframes wobble {
+    0% {
+      -webkit-transform: none;
+      transform: none;
+    }
+
+    15% {
+      -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+      transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+
+    30% {
+      -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+      transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+
+    45% {
+      -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+      transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+      -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+      transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+      -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+      transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes wobble {
+    0% {
+      -webkit-transform: none;
+      transform: none;
+    }
+
+    15% {
+      -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+      transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+
+    30% {
+      -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+      transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+
+    45% {
+      -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+      transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+      -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+      transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+      -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+      transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    100% {
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
   .win h2 {
-    color: red;
+    z-index: 125;
+    color: gold;
   }
 
   .lose h2 {
-    color: blue;
+    z-index: 125;
+    color: red;
+  }
+
+  #chosen-word {
+    z-index: 125;
+    text-align: center;
+    width: 100%;
+    position: absolute;
   }
 }
 
