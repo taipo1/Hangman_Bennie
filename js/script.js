@@ -1,5 +1,3 @@
-// Initialize ALL global variables here
-
 const wordList = [
   "vis",
   // "toeter",
@@ -9,21 +7,18 @@ const wordList = [
   // "snoer",
   // "geeuw",
 ];
-
 let inputs;
 let word;
 let gameOver;
 let tries = 0;
 let givenValue;
-
 const functions = {
   assignWinningWord: (list) => {
     const index = Math.floor(Math.random() * list.length);
     word = list[index].split("");
     return list[index].split("");
   },
-  ShowLoseScreen: () => {
-    // when losing 5 times, this has to happen
+  showLoseScreen: () => {
     document.querySelector(".lose").style.display = "block";
     gameOver = true;
   },
@@ -43,7 +38,6 @@ const functions = {
   fetchValue: () => {
     givenValue = document.querySelector("input").value;
     document.querySelector("input").value = "";
-
     return givenValue;
   },
   // updates the dom with wrong inputs
@@ -52,34 +46,56 @@ const functions = {
     animateHangMan(tries);
   },
   // calls the right functions for false or true statements
-  inputValidator: (input, word, lives) => {
+  inputValidator: (input, word) => {
     const validatedValue = f.checkInputValue(word, input);
     if (validatedValue) {
-      console.log("winning functions Called");
       return;
     } else {
-      console.log("Lost functions called");
       tries++;
-      functions.updateDomWrongInput(); //comment out for jest test
-      return;
+      return false;
     }
   },
-};
 
+  filterGuessedLetters: (word, inputs) => {
+    const wrongLetters = inputs.filter((letter) => {
+      return !word.includes(letter);
+    });
+    // Comment out for jest.
+    document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(
+      " "
+    );
+    return wrongLetters;
+  },
+
+  checkWinCondition: (word, inputs) => {
+    let remaining = word.filter((letter) => {
+      return !inputs.includes(letter);
+    });
+    // if the array is empty return true
+    if (remaining.length === 0) {
+      f.showWinningScreen(); // comment out for jest
+      gameOver = true;
+      return true;
+    } else {
+      return false;
+    }
+  },
+  checkLoseCondition: (tries) => {
+    if (tries === 5) {
+      f.showLoseScreen(); // comment out for jest
+      gameOver = true;
+      return true;
+    }
+  },
+
+  hideGameScreen: () => {
+    document.querySelector(".win").style.display = "none";
+    document.querySelector(".lose").style.display = "none";
+  },
+};
 const f = functions;
 
-const trackGuessedLetters = (word, inputs) => {
-  // Check for right inputs within given inputs
-  let remaining = word.filter((letter) => {
-    // If the letter is guessed return true (we want to remove that right away)
-    return !inputs.includes(letter);
-  });
-  console.log(remaining);
-  // If we have letters left, right?
-  return remaining.length === 0;
-};
-
-const theWord = (word, inputLetterWords) => {
+const UpdateDomWinningWord = (word, inputLetterWords) => {
   const display = word.map((letter) => {
     if (inputLetterWords.includes(letter)) {
       return letter;
@@ -90,55 +106,56 @@ const theWord = (word, inputLetterWords) => {
   document.querySelector(".the_word").innerHTML = display.join(" ");
 };
 
-const letters = (word, inputs) => {
+//Remove letters that are in the winning word from the array . push left over to dom
+const filterGuessedLetters = (word, inputs) => {
   const wrongLetters = inputs.filter((letter) => {
-    // If the letter is in the word return.... false/true (we want to remove that then)
     return !word.includes(letter);
   });
   document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
 };
+
+// Input handeler Master function
 
 const guessLetter = () => {
   if (gameOver) {
     return;
   }
   const inputValue = f.fetchValue();
-  f.inputValidator(inputValue, word, tries);
-
+  // Check if value is true/false to winning word
+  f.inputValidator(inputValue, word);
+  // push value to inputs array
   inputs.push(inputValue);
-  theWord(word, inputs);
-  letters(word, inputs);
 
-  if (trackGuessedLetters(word, inputs)) {
-    f.showWinningScreen();
-  } else if (tries >= 5) {
-    f.ShowLoseScreen();
-  }
+  // Dom updates
+  f.updateDomWrongInput();
+  UpdateDomWinningWord(word, inputs);
+
+  filterGuessedLetters(word, inputs);
+  // check for game win/lose condition
+  f.checkWinCondition(word, inputs);
+  f.checkLoseCondition(tries);
 };
 
-const beginTheGameWithPlayer = (player1) => {
+// Game functionality
+
+const startGame = () => {
   gameOver = false;
-  document.querySelector("input").value = "";
+  inputs = [];
+  tries = 0;
   f.assignWinningWord(wordList);
+  document.querySelector("input").value = "";
   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
   word;
-
-  tries = 0;
   document.querySelector(".lives span").innerHTML = 5 - 0;
-  inputs = [];
-  theWord(word, inputs);
-  letters(word, inputs);
+  f.hideGameScreen();
+  UpdateDomWinningWord(word, inputs);
+  filterGuessedLetters(word, inputs);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".guess").addEventListener("click", guessLetter);
-  document
-    .querySelector(".restart")
-    .addEventListener("click", beginTheGameWithPlayer);
-  beginTheGameWithPlayer();
+  document.querySelector(".restart").addEventListener("click", startGame);
+  startGame();
 });
-
-// allTheWords = []
-// This code here selects a random word
 
 module.exports = functions;
