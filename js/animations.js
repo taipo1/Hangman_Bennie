@@ -1,5 +1,5 @@
 const animateFunctions = {
-
+   
     animateHangMan: function (tries) {
         if (tries === 1)
             document.querySelector('#head').style.visibility = 'visible';
@@ -36,8 +36,8 @@ const animateFunctions = {
 
     showInputAndButtons: function () {
         document.querySelector('#current-word-wrapper').style.visibility = 'visible';
-    },
+    }
 
-}
+};
 
 module.exports = animateFunctions;
