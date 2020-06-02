@@ -86,6 +86,7 @@ body {
     text-align: center;
     font-family: fantasy;
     font-size: 16px;
+
   }
 
   #input-wrapper {
@@ -127,7 +128,6 @@ body {
     left: 30%;
     right: 30%;
     width: 40%;
-    border: solid black;
   }
 
   .guess {
@@ -147,6 +147,16 @@ body {
     cursor: pointer;
     outline: none;
     margin-left: 22.5%;
+  }
+
+  .guess:hover {
+    background: gold;
+    color: white;
+  }
+
+  .restart:hover {
+    background: gold;
+    color: white;
   }
 
   .restart {
@@ -173,7 +183,6 @@ body {
     bottom: 5%;
     height: 40%;
     width: 100%;
-    border: solid black;
   }
 
   footer {
@@ -204,15 +213,32 @@ body {
 
   .win,
   .lose {
-    display: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 40%;
+    font-size: 40px;
+    display: none; 
   }
 
   .win h2 {
-    color: red;
+    color: gold;
   }
 
-  .lose h2 {
-    color: blue;
+   .lose h2 {
+     color: red;
+   }
+  
+
+  #chosen-word {
+    text-align: center;
+    width: 100%;
+
+
+
+    position: absolute;
+
+
   }
 }
 

@@ -59,7 +59,7 @@
 }
 
 .cloud-3 {
-    left: 60%;
+    left: 65%;
     top: 18%;
 }
 
@@ -187,7 +187,7 @@
     }
 }
 
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
     .cloud-2 {
         top: -1%;
     }
@@ -237,4 +237,4 @@
         width: 14vh;
         height: 10vh;
     }
-}
+} */

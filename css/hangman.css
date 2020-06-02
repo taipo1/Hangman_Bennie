@@ -1,7 +1,6 @@
-:root {
+/* :root {
     --bgColor: linear-gradient(to bottom, #1976d2, #448aff);
-}
-
+} */
 #hangman {
     position: absolute;
     left: 1vw;
