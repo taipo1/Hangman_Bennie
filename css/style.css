@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
 
 body {
+  visibility: hidden;
   box-sizing: border-box;
   font-family: Arial,
     Helvetica,
@@ -13,9 +14,10 @@ body {
 }
 
 .portrait-block {
+  z-index: 1000;
   visibility: visible;
   position: absolute;
-  background: var(--bgColor);
+  background: linear-gradient(to bottom, #1976d2, #448aff);
   z-index: 1000;
   top: 0;
   right: 0;
@@ -24,6 +26,7 @@ body {
 }
 
 .portrait-block>div {
+  z-index: 1000;
   visibility: visible;
   z-index: 1001;
   text-align: center;
@@ -32,6 +35,7 @@ body {
 }
 
 .turn-device {
+  z-index: 1000;
   visibility: visible;
   z-index: 1001;
   font-family: 'Caesar Dressing',
