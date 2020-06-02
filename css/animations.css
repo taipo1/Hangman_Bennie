@@ -68,32 +68,6 @@
     top: 5%;
 }
 
-@media (orientation: portrait) {
-    .portrait-block {
-        display: absolute;
-        background: var(--bgColor);
-        z-index: 5000;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        overflow: hidden;
-    }
-
-    .portrait-block>div {
-        text-align: center;
-        place-self: center;
-        place-content: center;
-    }
-}
-
-@media (orientation: landscape) {
-    .portrait-block {
-        visibility: hidden;
-        z-index: -1000;
-    }
-}
 
 @media (min-width: 480px) {
     .bushes-1 {

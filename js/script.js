@@ -48,7 +48,7 @@ const functions = {
   // updates the dom with wrong inputs
   updateDomWrongInput: () => {
     document.querySelector(".lives span").innerHTML = 5 - tries;
-    animateHangMan(tries);
+    animatedFunctions.animateHangMan(tries);
   },
 
   // calls the right functions for false or true statements
@@ -144,6 +144,9 @@ const guessLetter = () => {
 // Game functionality
 
 const startGame = () => {
+  //////////////////////////////////////
+  animatedFunctions.resetHangMan(tries);
+  //////////////////////////////////////
   gameOver = false;
   inputs = [];
   tries = 0;
