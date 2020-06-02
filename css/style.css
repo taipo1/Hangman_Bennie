@@ -243,6 +243,8 @@ footer {
     display: none;
   }
 
+
+  /*  animation made by css animations gen */
   .win,
   .lose {
     -webkit-animation-name: wobble;
