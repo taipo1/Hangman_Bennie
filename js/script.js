@@ -20,13 +20,13 @@ const functions = {
   },
 
   showLoseScreen: () => {
-    animateFunctions.hideInputAndButtons()
+    animateFunctions.hideInputAndButtons();
     document.querySelector(".lose").style.display = "block";
     gameOver = true;
   },
 
   showWinningScreen: () => {
-    animateFunctions.hideInputAndButtons()
+    animateFunctions.hideInputAndButtons();
     document.querySelector(".win").style.display = "block";
     gameOver = true;
   },
