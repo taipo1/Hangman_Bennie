@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
 
-:root {
-  --bgColor: linear-gradient(to bottom, #1976d2, #448aff);
-}
-
 body {
   box-sizing: border-box;
   font-family: Arial,
@@ -340,7 +336,6 @@ body {
     width: 100%;
     position: absolute;
   }
-
 
   .game-title {
     font-size: 60px;
