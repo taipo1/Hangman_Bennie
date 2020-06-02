@@ -19,7 +19,7 @@ const animateFunctions = {
         }
     },
 
-    clearHangman: function () {
+    resetHangman: function () {
         document.querySelector('#head').style.visibility = 'hidden'
         document.querySelector('#body').style.visibility = 'hidden'
         document.querySelector('#arm').style.visibility = 'hidden'
