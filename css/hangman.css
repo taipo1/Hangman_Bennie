@@ -50,6 +50,7 @@
     background: linear-gradient(135deg, yellow, gold, yellow, gold, yellow, gold, yellow, gold, yellow, gold, yellow, gold);
     left: 27%;
     top: 10%;
+    visibility: hidden;
 }
 
 #rope-2 {
@@ -62,6 +63,7 @@
     transform: rotate(-50deg);
     border-radius: 25%;
     z-index: 20;
+    visibility: hidden;
 }
 
 #head {

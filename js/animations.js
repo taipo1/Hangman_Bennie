@@ -1,18 +1,23 @@
 const animateFunctions = {
-   
+
     animateHangMan: function (tries) {
-        if (tries === 1)
-            document.querySelector('#head').style.visibility = 'visible';
+        if (tries === 1) {
+            document.querySelector('#rope').style.visibility = 'visible';
+            document.querySelector('#rope-2').style.visibility = 'visible';
+        }
 
         if (tries === 2)
+            document.querySelector('#head').style.visibility = 'visible';
+
+        if (tries === 3)
             document.querySelector('#body').style.visibility = 'visible';
 
-        if (tries === 3) {
+        if (tries === 4) {
             document.querySelector('#arm').style.visibility = 'visible';
             document.querySelector('#arm-2').style.visibility = 'visible';
         }
 
-        if (tries === 4) {
+        if (tries === 5) {
             document.querySelector('#leg').style.visibility = 'visible';
             document.querySelector('#leg-2').style.visibility = 'visible';
             document.querySelector('#foot').style.visibility = 'visible';
