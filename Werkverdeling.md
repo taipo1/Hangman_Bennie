@@ -1,9 +1,11 @@
+# Verdeling van opdrachten
+
 ## Bennie
 
 - CSS Styling
-- Jest
+- JS animated HangMan
 
 ## Ramsey
 
-- Refactor JS
-- jest
+- Refactor given JS
+- jest test functions
