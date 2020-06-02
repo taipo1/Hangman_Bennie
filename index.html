@@ -1,103 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="css/hangman.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/animations.css">
-  <link rel="stylesheet" type="text/css" href="css/hangman.css">
+    <title>Hang By Your Man</title>
+  </head>
 
-  <title>Hang By Your Man</title>
-</head>
+  <body>
+    <div class="main-wrapper">
+      <div class="bushes-1 bushes"></div>
+      <div class="bushes-2 bushes"></div>
 
-<body>
-
-  <div class="main-wrapper">
-
-    <div class=" bushes-1 bushes "></div>
-    <div class=" bushes-2 bushes "></div>
-
-    <div class="cloud-1 cloud-1-4">
-      <div class="clouds cloud"></div>
-    </div>
-    <div class="cloud-2 cloud-1-4">
-      <div class="clouds cloud"></div>
-    </div>
-    <div class="cloud-3 cloud-1-4">
-      <div class=" clouds cloud"></div>
-    </div>
-    <div class="cloud-4 cloud-1-4">
-      <div class="clouds cloud"></div>
-    </div>
-
-    <div class="title-wrapper">
-      <h1 class="game-title">Hang By Your Man</h1>
-      <p class="game-subtitle">no people will actually be harmed during this game</p>
-    </div>
-
-    <div class="game-wrapper">
-
-      <div class="win">
-        <h2>You won!</h2>
+      <div class="cloud-1 cloud-1-4">
+        <div class="clouds cloud"></div>
+      </div>
+      <div class="cloud-2 cloud-1-4">
+        <div class="clouds cloud"></div>
+      </div>
+      <div class="cloud-3 cloud-1-4">
+        <div class="clouds cloud"></div>
+      </div>
+      <div class="cloud-4 cloud-1-4">
+        <div class="clouds cloud"></div>
       </div>
 
-      <div class="lose">
-        <h2>You lost..</h2>
-        <p>The chosen word was: <span></span></p>
+      <div class="title-wrapper">
+        <h1 class="game-title">Hang By Your Man</h1>
+        <p class="game-subtitle">
+          no people will actually be harmed during this game
+        </p>
       </div>
 
-      <input type="text" placeholder="Guess a letter" maxlength="1" />
-      <button class="guess">Guess</button>
-      <button class="restart">Restart</button>
+      <div class="game-wrapper">
+        <div class="win">
+          <h2>You won!</h2>
+        </div>
 
-      <h2>Current word:</h2>
-      <div class="the_word">_ _ _ _ _</div>
-      <h3>Incorrectly guessed letters:</h3>
-      <div class="guessed_letters"></div>
-      <p class="lives">You have <span></span> lives remaining</p>
+        <div class="lose">
+          <h2>You lost..</h2>
+          <p>The chosen word was: <span></span></p>
+        </div>
 
+        <input type="text" placeholder="Guess a letter" maxlength="1" />
+        <button class="guess">Guess</button>
+        <button class="restart">Restart</button>
+
+        <h2>Current word:</h2>
+        <div class="the_word">_ _ _ _ _</div>
+        <h3>Incorrectly guessed letters:</h3>
+        <div class="guessed_letters"></div>
+        <p class="lives">You have <span></span> lives remaining</p>
+      </div>
+
+      <div id="hangman">
+        <div id="hang-bottom"></div>
+        <div id="hang-pole"></div>
+        <div id="hang-arm"></div>
+        <div id="rope"></div>
+        <div id="rope-2"></div>
+
+        <div id="head"></div>
+        <div id="body"></div>
+
+        <div id="arm"></div>
+        <div id="arm-2"></div>
+        <div id="hand"></div>
+
+        <div id="leg"></div>
+        <div id="leg-2"></div>
+        <div id="foot"></div>
+      </div>
     </div>
 
-    <div id="hangman">
+    <footer>
+      <div>
+        <p class="about">
+          DUO Eindopdracht Module 4 | Winc Academy - Class May 2020 | Bennie
+          Draaijer & Ramsey
+        </p>
+      </div>
+    </footer>
 
-      <div id="hang-bottom"></div>
-      <div id="hang-pole"></div>
-      <div id="hang-arm"></div>
-      <div id="rope"></div>
-      <div id="rope-2"></div>
-
-      <div id="head"></div>
-      <div id="body"></div>
-
-      <div id="arm"></div>
-      <div id="arm-2"></div>
-      <div id="hand"></div>
-
-      <div id="leg"></div>
-      <div id="leg-2"></div>
-      <div id="foot"></div>
-
+    <div class="portrait-block">
+      <div>
+        <p class="turn-device">Please turn Your device to landscape !</p>
+      </div>
     </div>
 
-  </div>
-
-  <footer>
-    <div>
-      <p class="about">DUO Eindopdracht Module 4 | Winc Academy - Class May 2020 | Bennie Draaijer & Ramsey</p>
-    </div>
-  </footer>
-
-  <div class="portrait-block">
-    <div>
-      <p class="turn-device">Please turn Your device to landscape !</p>
-    </div>
-  </div>
-
-  <script defer type="text/javascript" src="js/animations.js"></script>
-  <script defer type="text/javascript" src="js/script.js"></script>
-  
-</body>
-
+    <script defer type="text/javascript" src="js/animations.js"></script>
+    <script defer type="text/javascript" src="js/script.js"></script>
+  </body>
 </html>

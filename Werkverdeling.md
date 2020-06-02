@@ -1,4 +1,4 @@
-# Verdeling van opdrachten 
+# Verdeling van opdrachten
 
 ## Bennie
 
