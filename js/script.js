@@ -251,7 +251,7 @@ const startGame = () => {
   f.hideGameScreen();
   UpdateDomWinningWord(word, inputs);
   filterGuessedLetters(word, inputs);
-  animateFunctions.resetHangman();
+  animateFunctions.resetHangMan();
   animateFunctions.showInputAndButtons();
 };
 
