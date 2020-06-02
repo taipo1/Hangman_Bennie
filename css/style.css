@@ -199,6 +199,7 @@ body {
   }
 
   footer>div {
+    z-index: 1;
     text-align: center;
     place-self: center;
     place-content: center;
@@ -207,38 +208,37 @@ body {
   }
 
   .about {
+    z-index: 1;
     font-size: 15px;
     margin: 0;
   }
 
   .win,
   .lose {
+    z-index: 125;
     position: absolute;
     text-align: center;
     width: 100%;
-    bottom: 40%;
+    bottom: 30%;
     font-size: 40px;
     display: none; 
   }
 
   .win h2 {
+    z-index: 125;
     color: gold;
   }
 
    .lose h2 {
+     z-index: 125;
      color: red;
    }
   
-
   #chosen-word {
+    z-index: 125;
     text-align: center;
     width: 100%;
-
-
-
     position: absolute;
-
-
   }
 }
 
