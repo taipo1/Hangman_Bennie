@@ -13,6 +13,7 @@ body {
 }
 
 .portrait-block {
+  visibility: visible;
   display: grid;
   position: fixed;
   background: var(--bgColor);
